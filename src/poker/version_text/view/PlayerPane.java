@@ -49,7 +49,7 @@ public class PlayerPane extends VBox {
     		if (evaluation != null)
     			lblEvaluation.setText(evaluation.toString());
     		else
-    			lblEvaluation.setText("--");
+    			lblEvaluation.setText("Your hand:");
     	}
     }
 }

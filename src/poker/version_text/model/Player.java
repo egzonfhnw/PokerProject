@@ -1,11 +1,20 @@
 package poker.version_text.model;
+import java.util.Scanner;
 
 import java.util.ArrayList;
 
 public class Player implements Comparable<Player> {
-    public static final int HAND_SIZE = 5;
-    
+    public static final int HAND_SIZE = 5;  
     private final String playerName; // This is the ID
+    
+  
+    Scanner userName = new Scanner(System.in);
+    
+   
+    
+    //private String playerName = userName.nextLine();    
+    
+    
     private final ArrayList<Card> cards = new ArrayList<>();
     private HandType handType;
     

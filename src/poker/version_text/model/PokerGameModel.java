@@ -16,6 +16,8 @@ public class PokerGameModel {
 		deck = new DeckOfCards();
 	}
 	
+	
+	
 	public Player getPlayer(int i) {
 		return players.get(i);
 	}

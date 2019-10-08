@@ -50,6 +50,15 @@ public class PokerGameView {
 		return (PlayerPane) players.getChildren().get(i);
 	}
 	
+	public Button getAddPlayerButton() {
+		return controls.btnAddPlayer;
+	}
+	
+	public Button getReducePlayerButton() {
+		return controls.btnReducePlayer;
+	}
+	
+	
 	public Button getShuffleButton() {
 		return controls.btnShuffle;
 	}

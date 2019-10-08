@@ -18,11 +18,14 @@ public class PokerGameController {
 		this.model = model;
 		this.view = view;
 		
+		view.getAddPlayerButton().setOnAction( e -> addPlayer() );
 		view.getShuffleButton().setOnAction( e -> shuffle() );
 		view.getDealButton().setOnAction( e -> deal() );
 	}
 	
-
+	private void addPlayer() {
+		PokerGame.NUM_PLAYERS++;
+	}
 
     /**
      * Remove all cards from players hands, and shuffle the deck

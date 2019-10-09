@@ -11,7 +11,7 @@ import poker.version_text.PokerGame;
 import poker.version_text.model.PokerGameModel;
 
 public class PokerGameView {
-	private HBox players;
+	public static HBox players;
 	private ControlArea controls;
 	
 	private PokerGameModel model;
@@ -20,12 +20,12 @@ public class PokerGameView {
 		this.model = model;
 		
 		// Create all of the player panes we need, and put them into an HBox
-		players = new HBox();
+		setPlayers(new HBox());
 		for (int i = 0; i < PokerGame.NUM_PLAYERS; i++) {
 			PlayerPane pp = new PlayerPane();
 			HBox.setHgrow(pp, Priority.ALWAYS); // On window resize, expand the player panes
 			pp.setPlayer(model.getPlayer(i)); // link to player object in the logic
-			players.getChildren().add(pp);
+			getPlayers().getChildren().add(pp);
 		}
 		
 		// Create the control area
@@ -34,7 +34,7 @@ public class PokerGameView {
 		
 		// Put players and controls into a BorderPane
 		BorderPane root = new BorderPane();
-		root.setCenter(players);
+		root.setCenter(getPlayers());
 		root.setBottom(controls);
 
         // Create the scene using our layout; then display it
@@ -47,7 +47,7 @@ public class PokerGameView {
 	}
 	
 	public PlayerPane getPlayerPane(int i) {
-		return (PlayerPane) players.getChildren().get(i);
+		return (PlayerPane) getPlayers().getChildren().get(i);
 	}
 	
 	public Button getAddPlayerButton() {
@@ -65,5 +65,13 @@ public class PokerGameView {
 	
 	public Button getDealButton() {
 		return controls.btnDeal;
+	}
+
+	public HBox getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(HBox players) {
+		this.players = players;
 	}
 }

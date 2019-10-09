@@ -25,6 +25,8 @@ public class PokerGameController {
 	
 	private void addPlayer() {
 		PokerGame.NUM_PLAYERS++;
+		PlayerPane pp = new PlayerPane();
+		PokerGameView.players.getChildren().add(pp);
 	}
 
     /**

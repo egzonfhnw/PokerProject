@@ -5,24 +5,28 @@ import java.util.ArrayList;
 
 public class Player implements Comparable<Player> {
     public static final int HAND_SIZE = 5;  
-    private final String playerName; // This is the ID
+   // private final String playerName; // This is the ID
     
   
     Scanner userName = new Scanner(System.in);
     
    
     
-    private String playerName1 = userName.nextLine();    
+    private String playerName = userName.nextLine();    
     
     
     private final ArrayList<Card> cards = new ArrayList<>();
     private HandType handType;
     
-    public Player(String playerName) {
-        this.playerName = playerName;
+    public Player(String userName) {
+        this.playerName = userName;
     }
 
-    public String getPlayerName() {
+    public Player(Scanner userName) {
+		
+	}
+
+	public String getPlayerName() {
         return playerName;
     }
 
@@ -62,11 +66,11 @@ public class Player implements Comparable<Player> {
         return handType.compareTo(o.handType);
     }
 
-	public String getPlayerName1() {
-		return playerName1;
+    /*public String getPlayerName1() {
+		return playerName;
 	}
 
 	public void setPlayerName1(String playerName1) {
-		this.playerName1 = playerName1;
-	}
+		this.playerName = playerName;
+	}*/
 }

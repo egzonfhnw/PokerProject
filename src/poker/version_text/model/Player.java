@@ -12,7 +12,7 @@ public class Player implements Comparable<Player> {
     
    
     
-    //private String playerName = userName.nextLine();    
+    private String playerName1 = userName.nextLine();    
     
     
     private final ArrayList<Card> cards = new ArrayList<>();
@@ -61,4 +61,12 @@ public class Player implements Comparable<Player> {
     public int compareTo(Player o) {
         return handType.compareTo(o.handType);
     }
+
+	public String getPlayerName1() {
+		return playerName1;
+	}
+
+	public void setPlayerName1(String playerName1) {
+		this.playerName1 = playerName1;
+	}
 }

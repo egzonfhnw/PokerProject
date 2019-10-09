@@ -47,7 +47,7 @@ public class PlayerPane extends VBox {
     		cl.setCard(card);
     		HandType evaluation = player.evaluateHand();
     		if (evaluation != null)
-    			lblEvaluation.setText(evaluation.toString());
+    			lblEvaluation.setText("Your hand: " +evaluation.toString());
     		else
     			lblEvaluation.setText("Your hand:");
     	}

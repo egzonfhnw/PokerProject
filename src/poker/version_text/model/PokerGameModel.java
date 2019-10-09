@@ -13,7 +13,7 @@ public class PokerGameModel {
 	public PokerGameModel() {
 		Scanner userName = new Scanner(System.in);
 			 
-			 for(int i=0 ; i < PokerGame.NUM_PLAYERS ; i++) {
+			 for(int i=0 ; i < PokerGame.NUM_PLAYERS ; i++) { //Here we tried to add a scanner for changing the players name
 			 String playerName = userName.nextLine(); 
 			 players.add(new Player(userName));
 			 

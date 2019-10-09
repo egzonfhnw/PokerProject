@@ -23,10 +23,10 @@ public class PokerGameController {
 		view.getDealButton().setOnAction( e -> deal() );
 	}
 	
-	private void addPlayer() { //Added a player, still have to add cards, name and functionality
+	private void addPlayer() { //Added a player, still have to add cards, name and functionality.
 		PokerGame.NUM_PLAYERS++;
 		PlayerPane pp = new PlayerPane();
-		PokerGameView.players.getChildren().add(pp);
+		PokerGameView.players.getChildren().add(pp); 
 	}
 
     /**

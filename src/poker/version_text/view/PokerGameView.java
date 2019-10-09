@@ -19,7 +19,7 @@ public class PokerGameView {
 	public PokerGameView(Stage stage, PokerGameModel model) {
 		this.model = model;
 		
-		// Create all of the player panes we need, and put them into an HBox
+		// Create all of the player panes we need, and put them into an HBox.
 		setPlayers(new HBox());
 		for (int i = 0; i < PokerGame.NUM_PLAYERS; i++) {
 			PlayerPane pp = new PlayerPane();

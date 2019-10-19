@@ -6,7 +6,7 @@
 }
 
 #controlArea {
-    -fx-spacing: 15.0px;
+    -fx-spacing: 20.0px;
     -fx-padding: 5.0px;
     -fx-border-color: green;
     -fx-border-width: 2.0px;
@@ -32,4 +32,3 @@
     -fx-max-height: 800;
 }
 
-}

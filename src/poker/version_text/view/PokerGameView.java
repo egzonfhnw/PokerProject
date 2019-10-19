@@ -1,7 +1,13 @@
 package poker.version_text.view;
 
 import javafx.scene.Scene;
+
+import java.util.Scanner;
+
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -15,6 +21,12 @@ public class PokerGameView {
 	private ControlArea controls;
 	
 	private PokerGameModel model;
+	
+	/*"public SelectPlayer(Stage stage1) {
+		Scanner userName = new Scanner(System.in);	    
+	    String playerName = userName.nextLine(); 
+		TextField name1 = new TextField();
+	}*/
 	
 	public PokerGameView(Stage stage, PokerGameModel model) {
 		this.model = model;
@@ -43,20 +55,22 @@ public class PokerGameView {
                 getClass().getResource("poker.css").toExternalForm());
         stage.setTitle("Poker Miniproject");
         stage.setScene(scene);
-        stage.show();		
+        stage.show();
+        
+        
 	}
 	
 	public PlayerPane getPlayerPane(int i) {
 		return (PlayerPane) getPlayers().getChildren().get(i);
 	}
 	
-	public Button getAddPlayerButton() {
+	/*public Button getAddPlayerButton() {
 		return controls.btnAddPlayer;
 	}
 	
 	public Button getReducePlayerButton() {
 		return controls.btnReducePlayer;
-	}
+	}*/
 	
 	
 	public Button getShuffleButton() {

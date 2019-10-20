@@ -2,7 +2,9 @@ package poker.version_text.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public enum HandType {
     HighCard, OnePair, TwoPair, ThreeOfAKind, Straight, Flush, FullHouse, FourOfAKind, StraightFlush;
@@ -67,16 +69,22 @@ public enum HandType {
     }
 
     public static boolean isStraight(ArrayList<Card> cards) {
-    	    		for (int i = 1; i < cards.size(); i++) {
-    			if( cards.get(i).getRank()!= cards.get(i - 1).getRank()) {
-    				return false;
-    			}
-    		}
-    		//	mit array sortieren und vergleichen
-    			//nach sortieren mit position 1 und 0  verglichen
-    			//wenn grösser oder kleiner dann fertig
-    			
-        return true;
+    	if(Straight == null && cards.size() != 5) {
+            return false;
+        }
+        else {
+             Arrays.sort(cards); //Kha nid sortiere irgendwie
+            int prev = -1;
+            for(int i = 0; i < cards.size(); i++) {
+                if(prev == -1 && (prev + 1) == cards.get(i)) { //weiss nid was falsch isch do
+                	prev = cards.get(i)); // do müesstisch au mol driluege
+                	}
+                else {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
     
     public static boolean isFlush(ArrayList<Card> cards) {

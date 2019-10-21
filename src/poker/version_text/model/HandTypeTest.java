@@ -33,11 +33,35 @@ public class HandTypeTest {
 			{ "3S", "2C", "3H", "2D", "QH" },
 			{ "9S", "2C", "2H", "5D", "5H" }
 			};
+
+	private static String[][] threeOfAKind = { //Test kreiert
+			{ "2S", "2C", "2H", "5D", "7H" },
+			{ "2S", "5C", "5H", "5D", "AH" },
+			{ "3S", "2C", "2H", "2D", "QH" },
+			{ "5S", "2C", "2H", "5D", "5H" }
+			};
+	
+	private static String[][] fourOfAKind = { //Test kreiert
+			{ "2S", "2C", "2H", "5D", "2H" },
+			{ "5S", "5C", "5H", "5D", "AH" },
+			{ "3S", "3C", "3H", "3D", "QH" },
+			{ "4S", "2C", "4H", "4D", "4H" }
+			};
+	
+	private static String[][] fullHouse = { //Test kreiert
+			{ "2S", "2C", "2H", "5D", "5H" },
+			{ "5S", "5C", "5H", "AD", "AH" },
+			{ "3S", "3C", "QH", "3D", "QH" },
+			{ "2S", "2C", "4H", "4D", "4H" }
+			};
 	
 	// This is where we store the translated hands
 	ArrayList<ArrayList<Card>> highCardHands;
 	ArrayList<ArrayList<Card>> pairHands;
 	ArrayList<ArrayList<Card>> twoPairHands;
+	ArrayList<ArrayList<Card>> threeOfAKindHands; //Für 3 of a kinds
+	ArrayList<ArrayList<Card>> fourOfAKindHands; //Für 4 of a kinds
+	ArrayList<ArrayList<Card>> fullHouseHands; //Für fullHouse
 	
 	/**
 	 * The makeHands method is called before each test method,
@@ -49,6 +73,9 @@ public class HandTypeTest {
 		highCardHands = makeHands(highCards);
 		pairHands = makeHands(pairs);
 		twoPairHands = makeHands(twoPairs);
+		threeOfAKindHands = makeHands(threeOfAKind); // neu
+		fourOfAKindHands = makeHands(fourOfAKind); // neu
+		fullHouseHands = makeHands(fullHouse); // neu
 	}
 
 	/**
@@ -82,6 +109,27 @@ public class HandTypeTest {
 		}
 		for (ArrayList<Card> hand : twoPairHands) {
 			assertTrue(HandType.isTwoPair(hand));
+		}
+	}
+	
+
+	@Test
+	public void testIsThreeOfAKind() {//Test neu für 3 of a kind
+		for (ArrayList<Card> hand : threeOfAKindHands) {
+			assertTrue(HandType.isThreeOfAKind(hand));
+		}
+	}
+	@Test
+	public void testIsFourOfAKind() {//Test neu für 4 of a kind
+		for (ArrayList<Card> hand : fourOfAKindHands) {
+			assertTrue(HandType.isFourOfAKind(hand));
+		}
+	}
+	
+	@Test
+	public void testIsfullHouse() {//Test neu für 4 of a kind
+		for (ArrayList<Card> hand : fullHouseHands) {
+			assertTrue(HandType.isFullHouse(hand));
 		}
 	}
 	

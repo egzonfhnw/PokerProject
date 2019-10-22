@@ -21,7 +21,7 @@ public enum HandType {
         if (isOnePair(cards)) currentEval = OnePair;
         if (isTwoPair(cards)) currentEval = TwoPair;
         if (isThreeOfAKind(cards)) currentEval = ThreeOfAKind;
-      //  if (isStraight(cards)) currentEval = Straight;
+        if (isStraight(cards)) currentEval = Straight;
         if (isFlush(cards)) currentEval = Flush;
         if (isFullHouse(cards)) currentEval = FullHouse;
         if (isFourOfAKind(cards)) currentEval = FourOfAKind;
@@ -93,37 +93,50 @@ public enum HandType {
         return found;
     }
 
-  /*  public static boolean isStraight(ArrayList<Card> cards) {
+    public static boolean isStraight(ArrayList<Card> cards) {
     	 boolean found = false;
-         
-         int[] ranks = new int[13];
-         
-         // [Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, J, Q, K, A]
-         // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-         
-         for(int i = 0; i < cards.size(); i++) {
-         	Card card = cards.get(i);
-         	if(card.getRank() == Rank.Ace) {
-         		ranks[12]++;
-         	} else if(card.getRank() == Rank.King) {
-         		ranks[11]++;
-         	} else if(card.getRank() == Rank.Queen) {
-         		ranks[10]++;
-         	} else if(card.getRank() == Rank.Jack) {
-         		ranks[9]++;
-         	} else {
-         		int position = Integer.parseInt(card.getRank().toString()) - 2;
-         		ranks[position]++;
-         	}
+    	 
+    	 cards.sort((x1,x2) -> x1.getRank().compareTo(x2.getRank()));
+        
+    	 int i = 0;
+    	 while (i < 4 && cards.get(i).getRank().ordinal() + 1 == cards.get(i + 1).getRank().ordinal() )
+    	 {
+    		 i++;
+    		 
+    	 }
+    	 
+    	 if (i == 4) found = true;
+    
+    return found;
+}
+
+    
          	
-         	
-         }
-         
-         
-    }
-    */
+    
     public static boolean isFlush(ArrayList<Card> cards) {
-        // TODO        
+    	boolean found = false;
+        
+        int[] ranks = new int[13];
+        
+        // [Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, J, Q, K, A]
+        // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        
+        for(int i = 0; i < cards.size(); i++) {
+        	Card card = cards.get(i);
+        	if(card.getRank() == Rank.Ace) {
+        		ranks[12]++;
+        	} else if(card.getRank() == Rank.King) {
+        		ranks[11]++;
+        	} else if(card.getRank() == Rank.Queen) {
+        		ranks[10]++;
+        	} else if(card.getRank() == Rank.Jack) {
+        		ranks[9]++;
+        	} else {
+        		int position = Integer.parseInt(card.getRank().toString()) - 2;
+        		ranks[position]++;
+        		
+        	}
+        }
         return false;
     }
     
@@ -150,14 +163,15 @@ public enum HandType {
          		ranks[position]++;
          	}
          }
-         	for(int i = 0; i < ranks.length; i++) {
-             	if(ranks[i] == 2 && ranks [i] == 3) {
+         	for(int i = 0; i < ranks.length; i++) 
+         		for (int j = 0; j<ranks.length; j++){
+             	if(ranks[i] == 2 && ranks [j] == 3) {
              		found = true;
          	
          }
          	}
              	return found;
-         
+         //need to fix
          
     }
       

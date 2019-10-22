@@ -41,6 +41,13 @@ public class HandTypeTest {
 			{ "5S", "2C", "2H", "5D", "5H" }
 			};
 	
+	private static String[][] straight = { //Test kreiert
+			{ "2S", "3C", "4H", "5D", "6H" },
+			{ "3S", "4C", "5H", "6D", "7H" },
+			{ "4S", "5C", "6H", "7D", "8H" },
+			{ "6S", "7C", "8H", "9D", "TH" }
+			};
+	
 	private static String[][] fourOfAKind = { //Test kreiert
 			{ "2S", "2C", "2H", "5D", "2H" },
 			{ "5S", "5C", "5H", "5D", "AH" },
@@ -60,6 +67,7 @@ public class HandTypeTest {
 	ArrayList<ArrayList<Card>> pairHands;
 	ArrayList<ArrayList<Card>> twoPairHands;
 	ArrayList<ArrayList<Card>> threeOfAKindHands; //Für 3 of a kinds
+	ArrayList<ArrayList<Card>> straightHands; //Für straight
 	ArrayList<ArrayList<Card>> fourOfAKindHands; //Für 4 of a kinds
 	ArrayList<ArrayList<Card>> fullHouseHands; //Für fullHouse
 	
@@ -74,6 +82,7 @@ public class HandTypeTest {
 		pairHands = makeHands(pairs);
 		twoPairHands = makeHands(twoPairs);
 		threeOfAKindHands = makeHands(threeOfAKind); // neu
+		straightHands = makeHands(straight); // neu
 		fourOfAKindHands = makeHands(fourOfAKind); // neu
 		fullHouseHands = makeHands(fullHouse); // neu
 	}
@@ -119,6 +128,14 @@ public class HandTypeTest {
 			assertTrue(HandType.isThreeOfAKind(hand));
 		}
 	}
+	
+	@Test
+	public void testStraight() {//Test neu für straight
+		for (ArrayList<Card> hand : straightHands) {
+			assertTrue(HandType.isStraight(hand));
+		}
+	}
+	
 	@Test
 	public void testIsFourOfAKind() {//Test neu für 4 of a kind
 		for (ArrayList<Card> hand : fourOfAKindHands) {

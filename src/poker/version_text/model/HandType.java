@@ -116,29 +116,19 @@ public enum HandType {
     public static boolean isFlush(ArrayList<Card> cards) {
     	boolean found = false;
         
-        int[] ranks = new int[13];
+    	cards.sort((x1,x2) -> x1.getSuit().compareTo(x2.getSuit()));
         
-        // [Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, J, Q, K, A]
-        // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        
-        for(int i = 0; i < cards.size(); i++) {
-        	Card card = cards.get(i);
-        	if(card.getRank() == Rank.Ace) {
-        		ranks[12]++;
-        	} else if(card.getRank() == Rank.King) {
-        		ranks[11]++;
-        	} else if(card.getRank() == Rank.Queen) {
-        		ranks[10]++;
-        	} else if(card.getRank() == Rank.Jack) {
-        		ranks[9]++;
-        	} else {
-        		int position = Integer.parseInt(card.getRank().toString()) - 2;
-        		ranks[position]++;
-        		
-        	}
-        }
-        return false;
-    }
+   	 int i = 0;
+   	 while (i < 4 && cards.get(i).getSuit() == cards.get(i + 1).getSuit() )
+   	 {
+   		 i++;
+   		 
+   	 }
+   	 
+   	 if (i == 4) found = true;
+   
+   return found;
+}
     
     public static boolean isFullHouse(ArrayList<Card> cards) {
     	boolean found = false;
@@ -209,7 +199,21 @@ public enum HandType {
          return found;
      }
         public static boolean isStraightFlush(ArrayList<Card> cards) {
-        // TODO        
-        return false;
-    }
+       	 boolean found = false;
+    	 
+       	 cards.sort((x1,x2) -> x1.getRank().compareTo(x2.getRank()));
+           
+       	 int i = 0;
+       	 int j = 0;
+       	 while (i < 4 && cards.get(i).getRank().ordinal() + 1 == cards.get(i + 1).getRank().ordinal() )
+       		while (j < 4 && cards.get(j).getSuit() == cards.get(j + 1).getSuit() )
+       	 {
+       		 i++;
+       		 j++;
+       	 }
+       	 
+       	 if (i == 4 && j == 4) found = true;
+       
+       return found;
+   }
 }

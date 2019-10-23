@@ -48,6 +48,14 @@ public class HandTypeTest {
 			{ "6S", "7C", "8H", "9D", "TH" }
 			};
 	
+	private static String[][] flush = { //Test kreiert
+			{ "2S", "3S", "4S", "5S", "6S" },
+			{ "3H", "4H", "5H", "6H", "7H" },
+			{ "4D", "5D", "6D", "7D", "8D" },
+			{ "6C", "7C", "8C", "9C", "TC" }
+			};
+	
+	
 	private static String[][] fourOfAKind = { //Test kreiert
 			{ "2S", "2C", "2H", "5D", "2H" },
 			{ "5S", "5C", "5H", "5D", "AH" },
@@ -62,14 +70,23 @@ public class HandTypeTest {
 			{ "2S", "2C", "4H", "4D", "4H" }
 			};
 	
+	private static String[][] straightFlush = { //Test kreiert
+			{ "2S", "3S", "4S", "5S", "6S" },
+			{ "3C", "4C", "5C", "6C", "7C" },
+			{ "4H", "5H", "6H", "7H", "8H" },
+			{ "6D", "7D", "8D", "9D", "TD" }
+			};
+	
 	// This is where we store the translated hands
 	ArrayList<ArrayList<Card>> highCardHands;
 	ArrayList<ArrayList<Card>> pairHands;
 	ArrayList<ArrayList<Card>> twoPairHands;
 	ArrayList<ArrayList<Card>> threeOfAKindHands; //Für 3 of a kinds
 	ArrayList<ArrayList<Card>> straightHands; //Für straight
+	ArrayList<ArrayList<Card>> flushHands; //Für flush
 	ArrayList<ArrayList<Card>> fourOfAKindHands; //Für 4 of a kinds
 	ArrayList<ArrayList<Card>> fullHouseHands; //Für fullHouse
+	ArrayList<ArrayList<Card>> straightFlushHands; //Für straightFlush
 	
 	/**
 	 * The makeHands method is called before each test method,
@@ -83,8 +100,10 @@ public class HandTypeTest {
 		twoPairHands = makeHands(twoPairs);
 		threeOfAKindHands = makeHands(threeOfAKind); // neu
 		straightHands = makeHands(straight); // neu
+		flushHands = makeHands(flush); // neu
 		fourOfAKindHands = makeHands(fourOfAKind); // neu
 		fullHouseHands = makeHands(fullHouse); // neu
+		straightFlushHands = makeHands(straightFlush); // neu
 	}
 
 	/**
@@ -137,6 +156,13 @@ public class HandTypeTest {
 	}
 	
 	@Test
+	public void testFlush() {//Test neu für straight
+		for (ArrayList<Card> hand : flushHands) {
+			assertTrue(HandType.isFlush(hand));
+		}
+	}
+	
+	@Test
 	public void testIsFourOfAKind() {//Test neu für 4 of a kind
 		for (ArrayList<Card> hand : fourOfAKindHands) {
 			assertTrue(HandType.isFourOfAKind(hand));
@@ -149,6 +175,14 @@ public class HandTypeTest {
 			assertTrue(HandType.isFullHouse(hand));
 		}
 	}
+	
+	@Test
+	public void testStraightFlush() {//Test neu für straight
+		for (ArrayList<Card> hand : straightFlushHands) {
+			assertTrue(HandType.isStraightFlush(hand));
+		}
+	}
+	
 	
 	/**
 	 * Make an ArrayList of hands from an array of string-arrays

@@ -86,6 +86,6 @@ public class PokerGameView {
 	}
 
 	public void setPlayers(HBox players) {
-		this.players = players;
+		PokerGameView.players = players;
 	}
 }

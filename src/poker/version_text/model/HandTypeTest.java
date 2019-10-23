@@ -156,7 +156,7 @@ public class HandTypeTest {
 	}
 	
 	@Test
-	public void testFlush() {//Test neu für straight
+	public void testFlush() {//Test neu für flush
 		for (ArrayList<Card> hand : flushHands) {
 			assertTrue(HandType.isFlush(hand));
 		}
@@ -170,14 +170,14 @@ public class HandTypeTest {
 	}
 	
 	@Test
-	public void testIsfullHouse() {//Test neu für 4 of a kind
+	public void testIsfullHouse() {//Test neu für fullHouse
 		for (ArrayList<Card> hand : fullHouseHands) {
 			assertTrue(HandType.isFullHouse(hand));
 		}
 	}
 	
 	@Test
-	public void testStraightFlush() {//Test neu für straight
+	public void testStraightFlush() {//Test neu für straightFlush
 		for (ArrayList<Card> hand : straightFlushHands) {
 			assertTrue(HandType.isStraightFlush(hand));
 		}

@@ -202,18 +202,29 @@ public enum HandType {
        	 boolean found = false;
     	 
        	 cards.sort((x1,x2) -> x1.getRank().compareTo(x2.getRank()));
+       	 cards.sort((x1,x2) -> x1.getSuit().compareTo(x2.getSuit()));
            
-       	 int i = 0;
-       	 int j = 0;
-       	 while (i < 4 && cards.get(i).getRank().ordinal() + 1 == cards.get(i + 1).getRank().ordinal() )
-       		while (j < 4 && cards.get(j).getSuit() == cards.get(j + 1).getSuit() )
+       	 
+       	 
+    	 int i = 0;
+    	 while (i < 4 && cards.get(i).getRank().ordinal() + 1 == cards.get(i + 1).getRank().ordinal() )
+    	 {
+    		 i++;
+    		 
+    	 }
+    	 
+    	
+    
+
+    	 int j = 0;
+       	 while (j < 4 && cards.get(i).getSuit() == cards.get(j + 1).getSuit() )
        	 {
-       		 i++;
        		 j++;
+       		 
        	 }
        	 
-       	 if (i == 4 && j == 4) found = true;
+       	 if (i == 4 && j ==4) found = true;
        
        return found;
-   }
+    }
 }

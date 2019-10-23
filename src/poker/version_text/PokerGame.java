@@ -33,7 +33,7 @@ public class PokerGame extends Application {
 		Button submit = new Button("Submit");
 		submit.setOnAction(e -> stage.setScene(scene1));
 
-		final Spinner<Integer> spinner = new Spinner<Integer>();
+		final Spinner<Integer> spinner = new Spinner<Integer>(); //tried something new
 		SpinnerValueFactory<Integer> val = //
 				new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5, PokerGame.NUM_PLAYERS);
 

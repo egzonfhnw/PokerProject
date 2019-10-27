@@ -2,16 +2,13 @@ package poker.version_text.view;
 
 import javafx.scene.Scene;
 
-import java.util.Scanner;
 
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+
 import javafx.stage.Stage;
 import poker.version_text.PokerGame;
 import poker.version_text.model.PokerGameModel;

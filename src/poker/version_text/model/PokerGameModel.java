@@ -14,13 +14,18 @@ public class PokerGameModel {
 		Scanner userName = new Scanner(System.in);//Here we tried to add a scanner for changing the players name
 		System.out.println("Enter the number of players");
 		while(!userName.hasNextInt()) {
-			System.out.println("Input is not a number, try again");
-			userName.nextLine();
+
 			count++;
-			if(count == 2) {
+			if(count == 3 ) {
 				System.out.println("self destruction in 3 seconds");
 			
+			} else {
+				System.out.println("Input is not a number, try again");
 			}
+			
+			userName.nextLine();
+			
+
 		
 		}
 		

@@ -13,7 +13,6 @@ import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.GridPane;
 
 public class PokerGame extends Application {
-	public static int NUM_PLAYERS = 2;
 	PokerGameModel model;
 	PokerGameView view;
 	PokerGameController controller;
@@ -24,7 +23,7 @@ public class PokerGame extends Application {
 
 	public void PokerGameView(Stage stage, PokerGameModel model) {
 
-		this.model = model; // Create and initialize the MVC components
+		/*this.model = model; // Create and initialize the MVC components
 		Scene scene1 = null;
 		char num;
 
@@ -51,7 +50,7 @@ public class PokerGame extends Application {
 		model = new PokerGameModel();
 
 		stage.setScene(sc1);
-		stage.show();
+		stage.show();*/
 
 		this.model = model;
 

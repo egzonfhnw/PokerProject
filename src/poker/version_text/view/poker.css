@@ -29,7 +29,6 @@
 .player {
 	-fx-font-size:20px;
 	-fx-padding: 5.0px;
-    -fx-border-color: green;
     -fx-border-width: 2.0px;
     -fx-background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1612/yamabikay161200085/69448418-poker-table-felt-background-high-resolution-photo-.jpg?ver=6");
 	-fx-background-size: 850;

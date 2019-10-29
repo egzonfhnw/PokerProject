@@ -22,16 +22,18 @@
     -fx-background-insets: 0;
 }
 
-.card {
+/* .card {
 	image: url (https://www.google.ch/imgres?imgurl=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0200%2F7616%2Fproducts%2Fplaying-cards-bicycle-rider-back-1_1024x1024.png%3Fv%3D1535755695&imgrefurl=https%3A%2F%2Fwww.artofplay.com%2Fproducts%2Fbicycle-rider-back-playing-cards&docid=AGU7w7klq4koCM&tbnid=tXY2gCV1MCSXpM%3A&vet=10ahUKEwj_tcHBiMHlAhXt6aYKHUF0AcYQMwhRKAswCw..i&w=729&h=1024&bih=687&biw=1200&q=poker%20card%20back&ved=0ahUKEwj_tcHBiMHlAhXt6aYKHUF0AcYQMwhRKAswCw&iact=mrc&uact=8)
-}
+}*/
 
 .player {
 	-fx-font-size:20px;
 	-fx-padding: 5.0px;
     -fx-border-color: green;
     -fx-border-width: 2.0px;
-    -fx-background-color: lightgrey;
+    -fx-background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1612/yamabikay161200085/69448418-poker-table-felt-background-high-resolution-photo-.jpg?ver=6");
+	-fx-background-size: 850;
+
 }
 
 .card {

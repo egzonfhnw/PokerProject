@@ -30,7 +30,7 @@ public class PokerGameView {
 	}*/
 	public Stage stage = null;
 	public PokerGameView(Stage stage, PokerGameModel model) {
-		this.model = model;
+	this.model = model;
 		
 		// Create all of the player panes we need, and put them into an HBox.
 		setPlayers(new HBox());
@@ -58,6 +58,7 @@ public class PokerGameView {
         stage.setTitle("Poker Miniproject");
         stage.setScene(scene);
         stage.show();
+        stage.centerOnScreen();
         
         
 	}

@@ -9,15 +9,14 @@ import poker.version_text.controller.PokerGameController;
 public class PokerGameModel {
 	public final static ArrayList<Player> players = new ArrayList<>();
 	private DeckOfCards deck;
-	//private int count;
-	public static int NUM_PLAYERS = 2;
+	public static int NUM_PLAYERS = 4;
 
 	
 	public PokerGameModel() {
-		PokerGameController.addPlayerNumDialogue();
+		//PokerGameController.addPlayerNumDialogue();
 		 
 		for(int i =0; i<NUM_PLAYERS;i++) {//give every player a name
-			players.add(new Player("Player "+ String.valueOf(i)));
+			players.add(new Player("Player "+ String.valueOf(i+1)));
 		}
 			 
 		

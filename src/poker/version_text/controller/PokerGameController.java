@@ -1,10 +1,19 @@
 package poker.version_text.controller;
 
-import java.util.Optional;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextInputDialog;
@@ -43,15 +52,48 @@ public class PokerGameController {
 
 	public static void addPlayerNumDialogue() {// Dialog which takes a string and converts it into an int of players
 
-		JFrame frame = new JFrame("Number of players");
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel("Choose number of players: ");
+		panel.setPreferredSize(new Dimension(400, 100));
+        panel.add(label);
+        Font font = new Font( "Arial", Font.BOLD, 25);
+        label.setFont(font);
+        DefaultComboBoxModel playerCount = new DefaultComboBoxModel();
+        playerCount.addElement("2");
+        playerCount.addElement("3");
+        playerCount.addElement("4");
+        JComboBox comboBox = new JComboBox(playerCount);
+        comboBox.setFont(font);
+        comboBox.setPreferredSize(new Dimension(50,50));
+        panel.add(comboBox);
 
+        int result = JOptionPane.showConfirmDialog(null, panel, "Number of players", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+      
+        switch (result) {
+            case JOptionPane.OK_OPTION:
+            	int selected = Integer.parseInt((String) playerCount.getSelectedItem());
+            	PokerGameModel.NUM_PLAYERS = selected;
+            case JOptionPane.CANCEL_OPTION:
+            	panel.setVisible(false);
+            	break;
+            	/*JOptionPane.OK_OPTION:
+            	PokerGameModel.NUM_PLAYERS = result;
+                break;*/
+        }
+
+    }
+
+		
+		
+		/*JOptionPane frame = new JOptionPane("Number of players", JOptionPane.QUESTION_MESSAGE);
+		
 		String playerCount = JOptionPane.showInputDialog(frame, "Enter number of players");
-
+		
 		int iPlayerCount = Integer.parseInt(playerCount);
 
-		PokerGameModel.NUM_PLAYERS = iPlayerCount;
+		PokerGameModel.NUM_PLAYERS = iPlayerCount;*/
 
-	}
+	
 
 	/*
 	 * public Player addPlayer() { Player newPlayer = model.addPlayer(userName);
@@ -69,7 +111,9 @@ public class PokerGameController {
 		model.getDeck().shuffle();
 	}
 
-	private void playerSelection() { 
+	private void playerSelection() {
+		
+		PokerGameController.addPlayerNumDialogue();
 		model = new PokerGameModel();
 		view = new PokerGameView(view.stage, model);
 		PokerGameController controller = new PokerGameController(model, view);

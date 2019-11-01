@@ -59,6 +59,7 @@ public class PokerGameView {
         stage.setScene(scene);
         stage.show();
         stage.centerOnScreen();
+        stage.setResizable(false);
         
         
 	}

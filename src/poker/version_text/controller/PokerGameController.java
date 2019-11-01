@@ -112,7 +112,6 @@ public class PokerGameController {
 	}
 
 	private void playerSelection() {
-		
 		PokerGameController.addPlayerNumDialogue();
 		model = new PokerGameModel();
 		view = new PokerGameView(view.stage, model);

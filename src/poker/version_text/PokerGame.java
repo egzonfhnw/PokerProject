@@ -17,7 +17,7 @@ public class PokerGame extends Application {
 
 	public static void main(String[] args) {
 	
-		String path = "src\\yugioh.mp3"; 
+		String path = "src\\poker\\version_text\\yugioh.mp3"; 
     	
      	 //Instantiating Media class  
          Media media = new Media(new File(path).toURI().toString()); 

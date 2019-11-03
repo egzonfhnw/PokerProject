@@ -15,15 +15,27 @@ public class PokerGameModel {
 	public PokerGameModel() {
 		//PokerGameController.addPlayerNumDialogue();
 		 
-		for(int i =0; i<NUM_PLAYERS;i++) {//give every player a name
-			players.add(new Player("Player "+ String.valueOf(i+1)));
-		}
+		
 			 
 		
 		deck = new DeckOfCards();
 	}
+	public void generatePlayers() {
+
+		for (int i = 0; i < PokerGameModel.NUM_PLAYERS; i++) {
+
+			players.add(new Player("Player "+ String.valueOf(i+1)));
+
+		}
+
+	}
 	
 	public Player getPlayer(int i) {
+		if(players.isEmpty()) {
+
+			generatePlayers();
+
+		}
 		return getPlayers().get(i);
 	}
 	

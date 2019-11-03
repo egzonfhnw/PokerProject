@@ -30,6 +30,22 @@ public class PokerGameModel {
 	public DeckOfCards getDeck() {
 		return deck;
 	}
+	public ArrayList<Player> evaluateWinner() {
+		ArrayList<Player> highestPlayers = new ArrayList<>();
+		for (Player p : players) {
+			if (highestPlayers.isEmpty()) {
+				highestPlayers.add(p);
+			} else {
+				if (p.compareTo(highestPlayers.get(0)) > 0) {
+					highestPlayers.clear();
+					highestPlayers.add(p);
+				} else if (p.compareTo(highestPlayers.get(0)) == 0) {
+					highestPlayers.add(p);
+				}
+			}
+		}
+		return highestPlayers;
+	}
 
 	/**
 	 * @return the players

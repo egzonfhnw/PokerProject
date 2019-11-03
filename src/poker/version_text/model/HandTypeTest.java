@@ -34,21 +34,21 @@ public class HandTypeTest {
 			{ "9S", "2C", "2H", "5D", "5H" }
 			};
 
-	private static String[][] threeOfAKind = { //Test kreiert
+	private static String[][] threeOfAKind = { 
 			{ "2S", "2C", "2H", "5D", "7H" },
 			{ "2S", "5C", "5H", "5D", "AH" },
 			{ "3S", "2C", "2H", "2D", "QH" },
 			{ "5S", "2C", "2H", "5D", "5H" }
 			};
 	
-	private static String[][] straight = { //Test kreiert
+	private static String[][] straight = { 
 			{ "2S", "3C", "4H", "5D", "6H" },
 			{ "3S", "4C", "5H", "6D", "7H" },
 			{ "4S", "5C", "6H", "7D", "8H" },
 			{ "6S", "7C", "8H", "9D", "TH" }
 			};
 	
-	private static String[][] flush = { //Test kreiert
+	private static String[][] flush = {
 			{ "2S", "3S", "4S", "5S", "6S" },
 			{ "3H", "4H", "5H", "6H", "7H" },
 			{ "4D", "5D", "6D", "7D", "8D" },
@@ -56,21 +56,21 @@ public class HandTypeTest {
 			};
 	
 	
-	private static String[][] fourOfAKind = { //Test kreiert
+	private static String[][] fourOfAKind = { 
 			{ "2S", "2C", "2H", "5D", "2H" },
 			{ "5S", "5C", "5H", "5D", "AH" },
 			{ "3S", "3C", "3H", "3D", "QH" },
 			{ "4S", "2C", "4H", "4D", "4H" }
 			};
 	
-	private static String[][] fullHouse = { //Test kreiert
+	private static String[][] fullHouse = { 
 			{ "2S", "2C", "2H", "5D", "5H" },
 			{ "5S", "5C", "5H", "AD", "AH" },
 			{ "3S", "3C", "QH", "3D", "QH" },
 			{ "2S", "2C", "4H", "4D", "4H" }
 			};
 	
-	private static String[][] straightFlush = { //Test kreiert
+	private static String[][] straightFlush = { 
 			{ "2S", "3S", "4S", "5S", "6S" },
 			{ "3C", "4C", "5C", "6C", "7C" },
 			{ "4H", "5H", "6H", "7H", "8H" },
@@ -81,12 +81,12 @@ public class HandTypeTest {
 	ArrayList<ArrayList<Card>> highCardHands;
 	ArrayList<ArrayList<Card>> pairHands;
 	ArrayList<ArrayList<Card>> twoPairHands;
-	ArrayList<ArrayList<Card>> threeOfAKindHands; //Für 3 of a kinds
-	ArrayList<ArrayList<Card>> straightHands; //Für straight
-	ArrayList<ArrayList<Card>> flushHands; //Für flush
-	ArrayList<ArrayList<Card>> fourOfAKindHands; //Für 4 of a kinds
-	ArrayList<ArrayList<Card>> fullHouseHands; //Für fullHouse
-	ArrayList<ArrayList<Card>> straightFlushHands; //Für straightFlush
+	ArrayList<ArrayList<Card>> threeOfAKindHands; 
+	ArrayList<ArrayList<Card>> straightHands; 
+	ArrayList<ArrayList<Card>> flushHands; 
+	ArrayList<ArrayList<Card>> fourOfAKindHands; 
+	ArrayList<ArrayList<Card>> fullHouseHands; 
+	ArrayList<ArrayList<Card>> straightFlushHands; 
 	
 	/**
 	 * The makeHands method is called before each test method,
@@ -98,12 +98,12 @@ public class HandTypeTest {
 		highCardHands = makeHands(highCards);
 		pairHands = makeHands(pairs);
 		twoPairHands = makeHands(twoPairs);
-		threeOfAKindHands = makeHands(threeOfAKind); // neu
-		straightHands = makeHands(straight); // neu
-		flushHands = makeHands(flush); // neu
-		fourOfAKindHands = makeHands(fourOfAKind); // neu
-		fullHouseHands = makeHands(fullHouse); // neu
-		straightFlushHands = makeHands(straightFlush); // neu
+		threeOfAKindHands = makeHands(threeOfAKind); 
+		straightHands = makeHands(straight); 
+		flushHands = makeHands(flush); 
+		fourOfAKindHands = makeHands(fourOfAKind); 
+		fullHouseHands = makeHands(fullHouse); 
+		straightFlushHands = makeHands(straightFlush); 
 	}
 
 	/**
@@ -120,7 +120,7 @@ public class HandTypeTest {
 			assertTrue(HandType.isOnePair(hand));
 		}
 		for (ArrayList<Card> hand : twoPairHands) {
-			assertTrue(HandType.isOnePair(hand)); // Two-pair contains a pair
+			assertTrue(HandType.isOnePair(hand)); 
 		}
 	}
 
@@ -142,42 +142,42 @@ public class HandTypeTest {
 	
 
 	@Test
-	public void testIsThreeOfAKind() {//Test neu für 3 of a kind
+	public void testIsThreeOfAKind() {
 		for (ArrayList<Card> hand : threeOfAKindHands) {
 			assertTrue(HandType.isThreeOfAKind(hand));
 		}
 	}
 	
 	@Test
-	public void testStraight() {//Test neu für straight
+	public void testStraight() {
 		for (ArrayList<Card> hand : straightHands) {
 			assertTrue(HandType.isStraight(hand));
 		}
 	}
 	
 	@Test
-	public void testFlush() {//Test neu für flush
+	public void testFlush() {
 		for (ArrayList<Card> hand : flushHands) {
 			assertTrue(HandType.isFlush(hand));
 		}
 	}
 	
 	@Test
-	public void testIsFourOfAKind() {//Test neu für 4 of a kind
+	public void testIsFourOfAKind() {
 		for (ArrayList<Card> hand : fourOfAKindHands) {
 			assertTrue(HandType.isFourOfAKind(hand));
 		}
 	}
 	
 	@Test
-	public void testIsfullHouse() {//Test neu für fullHouse
+	public void testIsfullHouse() {
 		for (ArrayList<Card> hand : fullHouseHands) {
 			assertTrue(HandType.isFullHouse(hand));
 		}
 	}
 	
 	@Test
-	public void testStraightFlush() {//Test neu für straightFlush
+	public void testStraightFlush() {
 		for (ArrayList<Card> hand : straightFlushHands) {
 			assertTrue(HandType.isStraightFlush(hand));
 		}

@@ -1,2 +1,38 @@
 # PokerProject
 
+# Do not gamble -- know your limit
+
+# Introduction
+
+Our aim was to create a game for 4 players. If we start the game, the program is going to show 4 players. 
+If there aren’t 4 players, the user should be able to define the amount of players with a button. 
+As the GUI didn’t look good, we changed the background color and font style and size to make it look better. 
+To make the GUI look better we changed the form of the buttons and added a hover method. 
+Whenever you hover over a button you can see the orange hover effect. 
+The button to change the player size can be pressed whenever you want and the program will not crash. 
+After each dealing the program will evaluate the winner and loser hands and show it.
+
+# Internet connection is needed
+
+# Use Eclipse to run it
+
+# Adjustments:
+	•	Implemented dynamic player number selection
+	•	Added hands type evaluation and tests: 
+		o	isThreeOfAKind
+		o	isStraight
+		o	isFlush
+		o	isFullHouse
+		o	isFourOfAKind
+		o	isStraightFlush
+	•	Implemented Junit Handtype tests for all Handtypes
+	•	Changed style of buttons
+	•	Added orange hover to all three buttons
+	•	Added button playerselection to change amount of players during the game
+	•	If playerselection is clicked a optiondialogue will pop up
+	•	Added background to make the game look smoother
+	•	Changed font styles
+	•	Added win/loss evaluation with additional label
+	•	Added music to game
+	•	Position of window is always centered
+	•	Window size is fixed
